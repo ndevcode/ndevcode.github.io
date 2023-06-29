@@ -33,13 +33,13 @@ void printArray1(std::vector<T>& myArray) {
 One drawback with the above approach is that I need to make the check for 
 'firstTime' in every iteration of the loop and print the comma. This is clumsy.
 
-So in the next approach I attempt to do better and remove the tiresome check
+2. So in the next approach I attempt to do better and remove the tiresome check
 for 'firstTime' in the loop.
 
 ```
-//Method 1A 
+//Method 2
 template <typename T>
-void printArray1A(std::vector<T>& myArray) {
+void printArray2(std::vector<T>& myArray) {
   if (myArray.empty()) return;
   auto iter = std::begin(myArray);
   std::cout << *iter;
@@ -55,13 +55,13 @@ This approach requires me to print the first element of the array, manually
 advance the iterator to the next position and then check whether I've reached
 the end of the container in the loop.
 
-2. Another way to print an array would be to append the output to cout, the 
+3. Another way to print an array would be to append the output to cout, the 
 standard output. The library function std::copy is useful in this context.
 
 ```
-//Method 2
+//Method 3
 template <typename T>
-void printArray2(std::vector<T>& myArray) {
+void printArray3(std::vector<T>& myArray) {
   if (myArray.empty()) return;
   std::copy(std::begin(myArray),std::prev(std::end(myArray)),std::ostream_iterator<T>(std::cout," , "));
   auto iter = std::prev(std::end(myArray));
@@ -75,11 +75,11 @@ after each element of the array is written. Note, that in this approach I
 iterate till the last but one element of the array and then print the last 
 element standalone.
 
-3. There is another common way to print an array and that is to overload the 
+4. There is another common way to print an array and that is to overload the 
 '<<' operator using a namespace level function as shown below.
 
 ```
-//Method 3
+//Method 4
 template <typename T>
 std::ostream& operator<<(std::ostream& os, std::vector<T>& myArray) {
   if (myArray.empty()) return os;
@@ -99,19 +99,18 @@ std::cout << myArray << std::endl;
 
 just as I would print an integer, double or std::string.
 
-4. The above approaches, while all valid, suffer from one serious drawback. They 
+5. The above approaches, while all valid, suffer from one serious drawback. They 
 are all tied to the container type that is being printed. In the examples above 
 I've implemented this code for std::vector. If I want to print std::list, 
 std::deque or any of the other containers I will need to write additional code. 
-
    Generic programming aims to solve this code bloat problem by making the code
 independent of the container type used. As with the C++ standard library, I use 
 iterators for my needs.
 
 ```
-//Method 4
+//Method 5
 template <typename InputIt>
-void printArray4(InputIt left, InputIt right) {
+void printArray5(InputIt left, InputIt right) {
   if (left == right) return ;
   auto iter = left;
   std::cout << *left;
@@ -133,4 +132,3 @@ printArray4(std::begin(myArray2),std::end(myArray2));
 ```
 
 without code bloat.
-
