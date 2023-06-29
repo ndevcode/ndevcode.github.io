@@ -70,7 +70,7 @@ void printArray3(std::vector<T>& myArray) {
 ```
 
 std::ostream_iterator<T>(std::cout," , ") is an iterator that writes elements
-to the end of std::cout. The " , " is the optional delimiter that is written 
+to the end of std::cout. The " , " is the optional delimiter that is printed 
 after each element of the array is written. Note, that in this approach I 
 iterate till the last but one element of the array and then print the last 
 element standalone.
