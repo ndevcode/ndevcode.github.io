@@ -4,7 +4,7 @@ In this post I describe a few ways to print a container in C++. For sake of brev
 I mean C++ std::vector, std::deque, std::list, std::set etc .
 
 1. First, we simply iterate over all items of the container
-   ```
+```
    //Method 1
 template <typename T>
 void printArray1(std::vector<T>& myArray) {
@@ -16,4 +16,6 @@ void printArray1(std::vector<T>& myArray) {
   }
   std::cout << std::endl;
 }
-   ```
+```
+
+2. 
