@@ -1,5 +1,3 @@
-Here you can say lots of fun things about your site.
+Hello I am ndevcode. By profession I am a software engineer. 
 
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+I will post about topics related to software programming in this blog. 
