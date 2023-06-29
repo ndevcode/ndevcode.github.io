@@ -102,7 +102,8 @@ just as I would print an integer, double or std::string.
 5. The above approaches, while all valid, suffer from one serious drawback. They 
 are all tied to the container type that is being printed. In the examples above 
 I've implemented this code for std::vector. If I want to print std::list, 
-std::deque or any of the other containers I will need to write additional code. 
+std::deque or any of the other containers I will need to write additional code.
+
    Generic programming aims to solve this code bloat problem by making the code
 independent of the container type used. As with the C++ standard library, I use 
 iterators for my needs.
