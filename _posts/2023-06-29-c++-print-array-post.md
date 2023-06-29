@@ -128,8 +128,8 @@ This allows me to do the following
 ```
 std::vector<int> myArray{1,2,3,4,5};
 std::list<double> myArray2{1.1,2.2,3.3,4.4,5.5};
-printArray4(std::begin(myArray),std::end(myArray));
-printArray4(std::begin(myArray2),std::end(myArray2));
+printArray5(std::begin(myArray),std::end(myArray));
+printArray5(std::begin(myArray2),std::end(myArray2));
 ```
 
 without code bloat.
