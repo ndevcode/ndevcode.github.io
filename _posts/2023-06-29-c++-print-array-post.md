@@ -14,7 +14,7 @@ I would expect the output to be printed on screen as
 without any extraneous commas either at the beginning or at the end of the line.
 
 
-1. First, I iterate over all items of the container
+* First, I iterate over all items of the container
 
 ```
 //Method 1
@@ -33,7 +33,7 @@ void printArray1(std::vector<T>& myArray) {
 One drawback with the above approach is that I need to make the check for 
 'firstTime' in every iteration of the loop and print the comma. This is clumsy.
 
-2. So in the next approach I attempt to do better and remove the tiresome check
+* So in the next approach I attempt to do better and remove the tiresome check
 for 'firstTime' in the loop.
 
 ```
@@ -55,7 +55,7 @@ This approach requires me to print the first element of the array, manually
 advance the iterator to the next position and then check whether I've reached
 the end of the container in the loop.
 
-3. Another way to print an array would be to append the output to cout, the 
+* Another way to print an array would be to append the output to cout, the 
 standard output. The library function std::copy is useful in this context.
 
 ```
@@ -75,7 +75,7 @@ after each element of the array is written. Note, that in this approach I
 iterate till the last but one element of the array and then print the last 
 element standalone.
 
-4. There is another common way to print an array and that is to overload the 
+* There is another common way to print an array and that is to overload the 
 '<<' operator using a namespace level function as shown below.
 
 ```
@@ -99,7 +99,7 @@ std::cout << myArray << std::endl;
 
 just as I would print an integer, double or std::string.
 
-5. The above approaches, while all valid, suffer from one serious drawback. They 
+* The above approaches, while all valid, suffer from one serious drawback. They 
 are all tied to the container type that is being printed. In the examples above 
 I've implemented this code for std::vector. If I want to print std::list, 
 std::deque or any of the other containers I will need to write additional code.
