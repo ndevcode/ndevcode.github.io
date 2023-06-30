@@ -139,8 +139,9 @@ This allows me to do the following without code bloat
 
 ### Generic programming in C++20
 
-C++20 allows writing semantic constraints on types that are enforced 
-at compile time. So here's the C++20 approach to the above problem.
+C++20 has a new language feature called concepts that allows writing 
+semantic constraints on types that are enforced at compile time. So 
+here's the C++20 approach to the above problem.
 
 ```
           //Method 6
