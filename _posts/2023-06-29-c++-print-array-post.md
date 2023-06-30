@@ -58,7 +58,7 @@ This approach requires me to print the first element of the array, manually
 advance the iterator to the next position and then check whether I've reached
 the end of the container in the loop.
 
-## Use the standard library algorithms to write to standard output
+## Use the standard library algorithms to write to standard output.
 
 The library function *std::copy* is useful in this context.
 
@@ -79,7 +79,7 @@ after each element of the array is written. Note, that in this approach I
 iterate till the last but one element of the array and then print the last 
 element standalone.
 
-## Overloading the *<<* operator
+## Overloading the *<<* operator.
 
 ```
           //Method 4
@@ -102,7 +102,7 @@ This allows me to do print a container like below
 
 just as I would print an integer, double or std::string.
 
-## A generic programming approach
+## A generic programming approach.
 
    The above approaches, while all valid, suffer from one serious drawback. They 
 are all tied to the container type that is being printed. In the examples above 
