@@ -136,3 +136,32 @@ This allows me to do the following without code bloat
           printArray5(std::begin(myArray),std::end(myArray));
           printArray5(std::begin(myArray2),std::end(myArray2));
 ```
+
+### Generic programming in C++20
+
+C++20 allows writing semantic constraints on types that are enforced 
+at compile time. So here's the C++20 approach to the above problem.
+
+```
+          //Method 6
+          template <typename Iterator>
+          concept InputIt = requires(Iterator iter) {
+            { iter++ } -> std::same_as<Iterator>;
+            { *iter } -> std::same_as<typename std::iterator_traits<Iterator>::reference>;
+          };
+          
+          template <InputIt Iter>
+          void printArray6(Iter left, Iter right) {
+            if (left == right) return ;
+            auto iter = left;
+            std::cout << *left;
+            std::advance(iter,1);
+            for (; iter != right; iter++) {
+              std::cout << " , " << *iter;
+            }
+            std::cout << std::endl;
+          }
+```
+
+I've added semantic checks to InputIt to verify, at compile time, that it 
+allows the increment and dereference operations. 
