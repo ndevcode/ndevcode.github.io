@@ -94,7 +94,7 @@ print(result)  # 30
 - No intermediate list is created — just yields values on demand.
 
 ## Using `yield` to Emit Multiple Values
-
+In some cases it may be necessary to return more than one value. In that case we can use `yield` as generator expressions are useful for only returning one value.
 ```python
 def generate_squares_and_cubes(limit):
     for x in range(limit):
