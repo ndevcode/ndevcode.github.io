@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "Fast Fourier Transform (FFT): A Gentle Introduction"
 usemathjax: true
 ---
 
