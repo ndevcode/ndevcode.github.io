@@ -47,6 +47,11 @@ void discreteFourierTransform(const float *X_n, float *X_k, int N) {
 
 ## n. References
 
+- [Discrete Fourier Transform — Wikipedia](https://en.wikipedia.org/wiki/Discrete_Fourier_transform)  
+- [Fast Fourier Transform — Wikipedia](https://en.wikipedia.org/wiki/Fast_Fourier_transform)  
+- [Cooley–Tukey FFT Algorithm — Wikipedia](https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm)  
+
+
 
 
 
