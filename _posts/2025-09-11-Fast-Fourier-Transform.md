@@ -12,19 +12,19 @@ The Fourier transform, a pivotal operation in signal processing and linear syste
 ## 2. The Discrete Fourier Transform (DFT)  
 The DFT transforms a finite, discrete sequence of data points into a corresponding finite, discrete sequence of frequency components. This output sequence represents samples of the continuous Discrete-Time Fourier Transform (DTFT) of the original signal.
 
-The DFT maps a sequence of complex numbers $x[n]$ of length $N$ into another sequence $X[k]$:  
+The DFT maps a sequence of complex numbers $$x[n]$$ of length $N$ into another sequence $$X[k]$$:  
 
 $$
 X[k] = \sum_{n=0}^{N-1} x[n] \, e^{-i 2\pi kn / N}, 
 \quad k = 0,1,\ldots,N-1
 $$  
 
-where $i = \sqrt{-1}$.
+where $$i = \sqrt{-1}$$.
 
-The FFT is fast $O(nlogn)$ algorithm  to compute the DFT which by itself is an $(O^2)$ algorithm
+The FFT is fast $$O(nlogn)$$ algorithm  to compute the DFT which by itself is an $$(O^2)$$ algorithm
 
 ###  C++ implementation of DFT
-To understand how DFT is implemented we implement it in C++ as below. Note our arrays $X_n$ and $X_k$ are both of length $2N$ where N is the lowest power of 2 greater than the number of samples. Each element of $X_n$ and $X_k$ is a complex number that is stored as two consecutive floats: the real part followed by the imaginary part.
+To understand how DFT is implemented we implement it in C++ as below. Note our arrays $X_n$ and $X_k$ are both of length $2N$ where N is the lowest power of 2 greater than the number of samples. Each element of $$X_n$$ and $$X_k$$ is a complex number that is stored as two consecutive floats: the real part followed by the imaginary part.
 
 ```
 
