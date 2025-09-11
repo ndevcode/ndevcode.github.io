@@ -2,6 +2,7 @@
 layout: post
 title: "Fast Fourier Transform (FFT): A Gentle Introduction"
 author: N Dev
+usemathjax: true
 ---
 
 # Fast Fourier Transform (FFT): A Gentle Introduction
