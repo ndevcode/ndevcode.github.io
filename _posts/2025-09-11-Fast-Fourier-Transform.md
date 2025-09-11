@@ -1,3 +1,47 @@
-Fast Fourier Transform (FFT): A Gentle Introduction
-1. Introduction
+# Fast Fourier Transform (FFT): A Gentle Introduction
+
+## 1. Introduction  
 The Fourier transform, a pivotal operation in signal processing and linear systems analysis, maps a function from its native domain (e.g., time or space) to the frequency domain. This transformation is invaluable due to a fundamental property known as the Convolution Theorem, which states that the convolution of two functions in the time domain corresponds to the pointwise multiplication of their respective Fourier transforms in the frequency domain. 
+
+## 2. The Discrete Fourier Transform (DFT)  
+The DFT transforms a finite, discrete sequence of data points into a corresponding finite, discrete sequence of frequency components. This output sequence represents samples of the continuous Discrete-Time Fourier Transform (DTFT) of the original signal.
+The DFT maps a sequence of complex numbers \(x[n]\) of length \(N\) into another sequence \(X[k]\):  
+
+\[
+X[k] = \sum_{n=0}^{N-1} x[n] \, e^{-i 2\pi kn / N}, \quad k = 0,1,\ldots,N-1
+\]
+
+### C++ Example: Optimized DFT
+```cpp
+#include <cmath>
+
+void discreteFourierTransform(const float *X_n, float *X_k, int N) {
+    constexpr float PI = 3.14159265358979323846f;
+
+    for (int k = 0; k < N; k++) {
+        float real = 0.0f, imag = 0.0f;
+
+        float angle_step = -2.0f * PI * k / N;
+        float cos_step   = std::cos(angle_step);
+        float sin_step   = std::sin(angle_step);
+
+        float cos_t = 1.0f, sin_t = 0.0f;
+
+        for (int n = 0; n < N; n++) {
+            float a = X_n[2*n];     
+            float b = X_n[2*n+1];   
+
+            real += a * cos_t - b * sin_t;
+            imag += a * sin_t + b * cos_t;
+
+            float tmp = cos_t * cos_step - sin_t * sin_step;
+            sin_t     = cos_t * sin_step + sin_t * cos_step;
+            cos_t     = tmp;
+        }
+
+        X_k[2*k]   = real;
+        X_k[2*k+1] = imag;
+    }
+}
+
+
