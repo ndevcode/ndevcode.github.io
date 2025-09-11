@@ -12,8 +12,8 @@ X[k] = \sum_{n=0}^{N-1} x[n] \, e^{-i 2\pi kn / N}, \quad k = 0,1,\ldots,N-1
 \]
 
 ### C++ Example: Optimized DFT
-```cpp
-#include <cmath>
+
+```
 
 void discreteFourierTransform(const float *X_n, float *X_k, int N) {
     constexpr float PI = 3.14159265358979323846f;
@@ -43,5 +43,11 @@ void discreteFourierTransform(const float *X_n, float *X_k, int N) {
         X_k[2*k+1] = imag;
     }
 }
+```
+
+## n. References
+
+
+
 
 
