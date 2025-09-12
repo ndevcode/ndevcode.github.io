@@ -107,7 +107,7 @@ where $$\omega = e^{-2 \pi i / N}$$ is a primitive $$N$$ -th root of unity with 
 We can avoid writing large exponents for $\omega$ using the fact that for any exponent $$x$$:
 
 $$
-\omega^x = \omega^{\,x \bmod N}.
+\omega^x = \omega^{\x \bmod N}.
 $$
 
 
