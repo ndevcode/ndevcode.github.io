@@ -165,14 +165,10 @@ Since $$n$$ is a power of two there are $$log(n)$$ steps in the reduction. If th
 Both terms are size- $$(N/2)$$ DFTs (with root $$\omega^2$$ . Call them $$E[k]$$ and $$O[k]$$. 
 
 - For $$(0 \leq k < N/2)$$:  
-  $$
-  X[k] = E[k] + \omega^k O[k]
-  $$
+  $$X[k] = E[k] + \omega^k O[k]$$
 
 - For $$(N/2 \leq k < N)$$:  
-  $$
-  X[k] = E[k - N/2] - \omega^{k - N/2} O[k - N/2]
-  $$
+  $$X[k] = E[k - N/2] - \omega^{k - N/2} O[k - N/2]$$
 
 This is the **butterfly relation**.
 
