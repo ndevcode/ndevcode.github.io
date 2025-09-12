@@ -109,6 +109,12 @@ $$
 \omega^x = \omega^{x \bmod N}.
 $$
 
+## 4. From DFT to FFT via DFT Matrix
+The above matrix $$W$$ has a lot of symmetry
+- The entries are just powers of a single number $$\omega$$.
+- Many values repeat: for example, $$\omega^{j+N} = \omega^j$$.
+- Rows and columns are related by periodicity.
+
 
 ## n. References
 
