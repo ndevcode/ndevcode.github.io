@@ -32,7 +32,7 @@ If $$x[n] = a + ib$$, then
 
 $$
 X[k] = \sum_{n=0}^{N-1} (a + ib)(\cos \theta - i \sin \theta), 
-\quad \theta = \tfrac{2\pi kn}{N}
+\quad \theta = -\tfrac{2\pi kn}{N}
 $$
 
 So both real and imaginary parts of the input contribute:
