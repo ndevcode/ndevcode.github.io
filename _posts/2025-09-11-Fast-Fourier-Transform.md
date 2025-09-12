@@ -234,7 +234,11 @@ So for N = 8 the situation is as below
 
 ## 7. The C++ implementation of iterative C++
 
-## 8. References
+## 8. The inverse FFT
+
+## 9. A CUDA implementation of FFT
+
+## 10. References
 
 - [Discrete Fourier Transform — Wikipedia](https://en.wikipedia.org/wiki/Discrete_Fourier_transform)  
 - [Fast Fourier Transform — Wikipedia](https://en.wikipedia.org/wiki/Fast_Fourier_transform)  
