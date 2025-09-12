@@ -116,16 +116,20 @@ The above matrix $$W$$ has a lot of symmetry
 - Rows and columns are related by periodicity.
 
 In our formulation $$N$$ is a power of 2 i.e. it is even. This implies that any index $$n$$ can be written as either even $$2m$$ or odd $$2m+1$$.
-We split the input vector as 
+We split the input vector as  
+
 $$
 \begin{bmatrix}
-x\_even \\
-x\_odd \\
+x_{\text{even}} \\
+x_{\text{odd}}
 \end{bmatrix}
-$$
-where
- - $$x\_even = (x[0], x[2], x[4], …)$$
- - $$x\_odd  = (x[1], x[3], x[5], …)$$
+$$  
+
+where  
+
+- \( x_{\text{even}} = (x[0], x[2], x[4], \dots) \)  
+- \( x_{\text{odd}}  = (x[1], x[3], x[5], \dots) \)  
+
 
 ## n. References
 
