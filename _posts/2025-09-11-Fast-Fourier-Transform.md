@@ -144,7 +144,7 @@ $$
 
 Notice that both sums are themselves **DFTs of length \(N/2\)** (with base root $$\(\omega^2\))$$.
 
-The DFT matrix can be decomposed as  
+The DFT matrix can be decomposed, recursively,  as  
 
 $$
 W_N =
@@ -160,6 +160,7 @@ where:
 - $$D_{N/2}$$ is a diagonal matrix of *twiddle factors*:  
   $$D_{N/2} = \mathrm{diag}(1, \omega, \omega^2, \ldots, \omega^{N/2 - 1}).$$
 
+Since $$n$$ is a power of two there are $$log(n)$$ steps in the reduction. If the multiplications in each step are of $$O(n)$$ then we have an $$O(nlogn)$$ algorithm for FFT.
 
 ## n. References
 
