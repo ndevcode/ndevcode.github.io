@@ -31,24 +31,24 @@ To understand how DFT works we implement it in C++ as below. Note our arrays $$X
 If $$x[n] = a + ib$$, then
 
 $$
-\[
+
 X[k] = \sum_{n=0}^{N-1} (a + ib)(\cos \theta - i \sin \theta), 
 \quad \theta = \tfrac{2\pi kn}{N}
-\]
+
 $$
 
 So both real and imaginary parts of the input contribute:
 
 $$
-\[
+
 \Re(X[k]) = \sum_{n=0}^{N-1} \big(a \cos \theta - b \sin \theta\big)
-\]
+
 $$ 
 and 
 $$
-\[
+
 \Im(X[k]) = \sum_{n=0}^{N-1} \big(a \sin \theta + b \cos \theta\big)
-\]
+
 $$ 
 
 ```
