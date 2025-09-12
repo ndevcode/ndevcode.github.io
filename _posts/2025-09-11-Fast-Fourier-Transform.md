@@ -115,6 +115,10 @@ The above matrix $$W$$ has a lot of symmetry
 - Many values repeat: for example, $$\omega^{j+N} = \omega^j$$.
 - Rows and columns are related by periodicity.
 
+In our formulation $$N$$ is a power of 2 i.e. it is even. This implies that any index $$n$$ can be written as either even $$2m$$ or odd $$2m+1$$.
+We split the input vector as 
+ - **x_even** = (x[0], x[2], x[4], …)
+ - **x_odd** = (x[1], x[3], x[5], …)
 
 ## n. References
 
