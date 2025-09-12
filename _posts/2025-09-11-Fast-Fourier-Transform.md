@@ -83,9 +83,9 @@ void discreteFourierTransform(const float *X_n, float *X_k, int N) {
 The DFT process can be expressed as a matrix operation where the original vector $$X_n$$ is transformed into the vector $$X_k$$ via multiplication with the square DFT Matrix, $$W$$ where $$W$$ is ad defined below 
 
 
-$$ 
-W = \left( \frac{\omega^{jk}} \right)_{j,k=0,\ldots,N-1}
-$$ 
+$$
+W = \left( \omega^{jk} \right)_{j,k=0,\ldots,N-1}
+$$
 
 or equivalently:
 
@@ -101,10 +101,9 @@ W =
 \end{bmatrix}
 $$ 
 
-where $$\omega = e^{-2 \pi i / N}$$ is a primitive $$N$$ -th root of unity with $$i^2 = -1$$.  
+where $$\omega = e^{-2 \pi i / N}$$ is the primitive $$N$$-th root of unity with $$i^2 = -1$$.  
 
-We can avoid writing large exponents for $$\omega$$ using the fact that for any exponent $$x$$:
-
+Note that 
 $$
 \omega^x = \omega^{x \bmod N}.
 $$
