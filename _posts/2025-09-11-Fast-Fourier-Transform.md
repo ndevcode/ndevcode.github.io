@@ -127,8 +127,8 @@ $$
 
 where  
 
-- \( x_{\text{even}} = (x[0], x[2], x[4], \dots) \)  
-- \( x_{\text{odd}}  = (x[1], x[3], x[5], \dots) \)  
+- $$ \( x_{\text{even}} = (x[0], x[2], x[4], \dots) \) $$
+- $$ \( x_{\text{odd}}  = (x[1], x[3], x[5], \dots) \) $$ 
 
 
 ## n. References
