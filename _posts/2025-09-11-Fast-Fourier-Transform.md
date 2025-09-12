@@ -162,6 +162,21 @@ where:
 
 Since $$n$$ is a power of two there are $$log(n)$$ steps in the reduction. If the multiplications in each step are of $$O(n)$$ then we have an $$O(nlogn)$$ algorithm for FFT.
 
+Both terms are size-$$(N/2)$$ DFTs (with root $$\omega^2$$. Call them $$E[k]$$ and $$O[k]$$.
+
+- For $$(0 \leq k < N/2)$$:  
+  $$
+  X[k] = E[k] + \omega^k O[k]
+  $$
+
+- For $$(N/2 \leq k < N)$$:  
+  $$
+  X[k] = E[k - N/2] - \omega^{k - N/2} O[k - N/2]
+  $$
+
+This is the **butterfly relation**.
+
+
 ## n. References
 
 - [Discrete Fourier Transform — Wikipedia](https://en.wikipedia.org/wiki/Discrete_Fourier_transform)  
