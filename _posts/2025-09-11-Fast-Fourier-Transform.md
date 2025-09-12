@@ -175,7 +175,7 @@ Both terms are size- $$(N/2)$$ DFTs (with root $$\omega^2$$ . Call them $$E[k]$$
 This is the **butterfly relation**.
 
 ## 5. The recursive algorithm for FFT
-The recursive divide and conquer algorithm is then easier to understand from the above formulation and is given as 
+The recursive divide and conquer algorithm is then easier to understand from the above formulation and its pseudocode is given as 
 ```
 def fft_recursive(x,n,s) :
     if n == 1 :
@@ -190,7 +190,27 @@ def fft_recursive(x,n,s) :
           X_k+N/2 = p - q
     return X_1,...,X_n   
 ```
+## 6. The Cooley-Tukey Iterative FFT Algorithm
 
+The Cooley-Tukey Iterative FFT is one of the most common FFT algorithms.
+```
+def fft_iterative(x,n) :
+    bit_reverse(x,X)
+    n = len(x)
+    for s in range(1,log(n)) :
+        m = 2
+        w_m = omega
+        for k in range(0,n-1,m) :
+            w = 1
+            for j in range(0,m/2) :
+                t = wX[k + j + m/2]
+                u =  X[k + j]
+                X[k + j] = u + t
+                X[k + j + m/2] = u - t
+                w = w * w_m
+        m *= 2
+    return X
+```
 ## n. References
 
 - [Discrete Fourier Transform — Wikipedia](https://en.wikipedia.org/wiki/Discrete_Fourier_transform)  
