@@ -170,6 +170,8 @@ Both terms are size- $$(N/2)$$ DFTs (with root $$\omega^2$$ . Call them $$E[k]$$
 - For $$(N/2 \leq k < N)$$:  
   $$X[k] = E[k - N/2] - \omega^{k - N/2} O[k - N/2]$$
 
+  Thus except for the multiplcative part the odd and even terms in the second equation above are already computed. 
+
 This is the **butterfly relation**.
 
 
