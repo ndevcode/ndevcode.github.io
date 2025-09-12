@@ -28,23 +28,28 @@ The FFT is fast $$O(nlogn)$$ algorithm  to compute the DFT which by itself is an
 ###  C++ implementation of DFT
 To understand how DFT works we implement it in C++ as below. Note our arrays $$X_n$$ and $$X_k$$ are both of length $$2N$$ where $$N$$ is the lowest power of 2 greater than the number of samples. Each element of $$X_n$$ and $$X_k$$ is a complex number that is stored as two consecutive floats: the real part followed by the imaginary part.
 
-If $x[n] = a + ib$, then
+If $$x[n] = a + ib$$, then
 
+$$
 \[
 X[k] = \sum_{n=0}^{N-1} (a + ib)(\cos \theta - i \sin \theta), 
 \quad \theta = \tfrac{2\pi kn}{N}
 \]
+$$
 
 So both real and imaginary parts of the input contribute:
 
+$$
 \[
 \Re(X[k]) = \sum_{n=0}^{N-1} \big(a \cos \theta - b \sin \theta\big)
 \]
-
+$$
+and
+$$
 \[
 \Im(X[k]) = \sum_{n=0}^{N-1} \big(a \sin \theta + b \cos \theta\big)
 \]
-
+$$
 
 ```
 
