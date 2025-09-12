@@ -226,9 +226,8 @@ So for N = 8 the situation is as below
 | 6           | 110    | 011          | 3         |
 | 7           | 111    | 111          | 7         |
 
-So all of the 
-
 ## 7. The C++ implementation of iterative C++
+
 ## 8. References
 
 - [Discrete Fourier Transform — Wikipedia](https://en.wikipedia.org/wiki/Discrete_Fourier_transform)  
