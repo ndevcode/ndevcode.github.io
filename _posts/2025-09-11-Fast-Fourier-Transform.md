@@ -26,7 +26,7 @@ where $$i = \sqrt{-1}$$.
 The FFT is fast $$O(nlogn)$$ algorithm  to compute the DFT which by itself is an $$(O^2)$$ algorithm
 
 ###  C++ implementation of DFT
-To understand how DFT is implemented we implement it in C++ as below. Note our arrays $$X_n$$ and $$X_k$$ are both of length $$2N$$ where $$N$$ is the lowest power of 2 greater than the number of samples. Each element of $$X_n$$ and $$X_k$$ is a complex number that is stored as two consecutive floats: the real part followed by the imaginary part.
+To understand how DFT works we implement it in C++ as below. Note our arrays $$X_n$$ and $$X_k$$ are both of length $$2N$$ where $$N$$ is the lowest power of 2 greater than the number of samples. Each element of $$X_n$$ and $$X_k$$ is a complex number that is stored as two consecutive floats: the real part followed by the imaginary part.
 
 ```
 
