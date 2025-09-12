@@ -31,7 +31,7 @@ To understand how DFT works we implement it in C++ as below. Note our arrays $$X
 If $$x[n] = a + ib$$, then
 
 $$
-X[k] = \sum_{n=0}^{N-1} (a + ib)(\cos \theta - i \sin \theta), 
+X[k] = \sum_{n=0}^{N-1} (a + ib)(\cos \theta + i \sin \theta), 
 \quad \theta = -\tfrac{2\pi kn}{N}
 $$
 
