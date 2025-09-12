@@ -211,7 +211,25 @@ def fft_iterative(x,n) :
         m *= 2
     return X
 ```
-## n. References
+The $$bit-reverse$$ algorithm reorders input indices by reversing their binary representations, preparing the data so that the recursive even–odd splits of the FFT can be executed efficiently in place.
+
+So for N = 8 the situation is as below
+
+| Index       | Binary | Bit-reversed | New index |
+| ----------- | ------ | ------------ | --------- |
+| 0           | 000    | 000          | 0         |
+| 1           | 001    | 100          | 4         |
+| 2           | 010    | 010          | 2         |
+| 3           | 011    | 110          | 6         |
+| 4           | 100    | 001          | 1         |
+| 5           | 101    | 101          | 5         |
+| 6           | 110    | 011          | 3         |
+| 7           | 111    | 111          | 7         |
+
+So all of the 
+
+## 7. The C++ implementation of iterative C++
+## 8. References
 
 - [Discrete Fourier Transform — Wikipedia](https://en.wikipedia.org/wiki/Discrete_Fourier_transform)  
 - [Fast Fourier Transform — Wikipedia](https://en.wikipedia.org/wiki/Fast_Fourier_transform)  
