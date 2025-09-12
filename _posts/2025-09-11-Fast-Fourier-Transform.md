@@ -156,8 +156,8 @@ $$
 
 where:
 
-- $$ W_{N/2} $$ is the DFT matrix of size $$(N/2)$$,  
-- $$ D_{N/2} $$ is a diagonal matrix of *twiddle factors*:  
+- $$W_{N/2}$$ is the DFT matrix of size $$(N/2)$$,  
+- $$D_{N/2}$$ is a diagonal matrix of *twiddle factors*:  
   $$
   D_{N/2} = \mathrm{diag}(1, \omega, \omega^2, \ldots, \omega^{N/2 - 1}).
   $$
