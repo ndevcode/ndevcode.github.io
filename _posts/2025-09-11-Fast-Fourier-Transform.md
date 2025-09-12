@@ -138,8 +138,8 @@ $$
 Then the DFT can be written as  
 
 $$
-X[k] \;=\; \sum_{m=0}^{\tfrac{N}{2}-1} x[2m] \, \omega^{2mk} 
-\;+\; \omega^k \sum_{m=0}^{\tfrac{N}{2}-1} x[2m+1] \, \omega^{2mk}.
+X[k] \=\ \sum_{m=0}^{\tfrac{N}{2}-1} x[2m] \, \omega^{2mk} 
+\+\ \omega^k \sum_{m=0}^{\tfrac{N}{2}-1} x[2m+1] \, \omega^{2mk}.
 $$  
 
 Notice that both sums are themselves **DFTs of length \(N/2\)** (with base root $$\(\omega^2\))$$.
