@@ -217,7 +217,7 @@ def fft_iterative(x,n) :
         m *= 2
     return X
 ```
-The $$bit-reverse$$ algorithm reorders input indices by reversing their binary representations, preparing the data so that the recursive even–odd splits of the FFT can be executed efficiently in place as post the bit reversal the elements in the odd positions are coalesced together and the elements in the even positions are coalesced together. 
+The $$bit-reverse$$ algorithm reorders input indices by reversing their binary representations, preparing the data so that the recursive even–odd splits of the FFT can be executed efficiently in place.
 
 So for N = 8 the situation is as below
 
