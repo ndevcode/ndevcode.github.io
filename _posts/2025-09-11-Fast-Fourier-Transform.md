@@ -43,13 +43,13 @@ $$
 \[
 \Re(X[k]) = \sum_{n=0}^{N-1} \big(a \cos \theta - b \sin \theta\big)
 \]
-$$
-and
+$$ 
+and 
 $$
 \[
 \Im(X[k]) = \sum_{n=0}^{N-1} \big(a \sin \theta + b \cos \theta\big)
 \]
-$$
+$$ 
 
 ```
 
