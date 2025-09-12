@@ -174,6 +174,12 @@ Both terms are size- $$(N/2)$$ DFTs (with root $$\omega^2$$ . Call them $$E[k]$$
 
 This is the **butterfly relation**.
 
+### Why FFT works
+The key insight behind the FFT is reusing computation. In a naive DFT, every output $$X[k]$$ sums over all $$N$$ inputs independently, leading to 
+$$O(N^2)$$ operations. 
+
+Each sum is itself a smaller DFT of length $$N/2$$. By computing these smaller DFTs once and reusing them, we avoid repeating calculations. Recursively applying this divide-and-conquer approach reduces the complexity from $$O(N^2)$$ to $$O(Nlog⁡N)$$
+
 ## 5. The recursive algorithm for FFT
 The recursive divide and conquer algorithm is then easier to understand from the above formulation and its pseudocode is given as 
 ```
@@ -211,7 +217,7 @@ def fft_iterative(x,n) :
         m *= 2
     return X
 ```
-The $$bit-reverse$$ algorithm reorders input indices by reversing their binary representations, preparing the data so that the recursive even–odd splits of the FFT can be executed efficiently in place.
+The $$bit-reverse$$ algorithm reorders input indices by reversing their binary representations, preparing the data so that the recursive even–odd splits of the FFT can be executed efficiently in place as post the bit reversal the elements in the odd positions are coalesced together and the elements in the even positions are coalesced together. 
 
 So for N = 8 the situation is as below
 
