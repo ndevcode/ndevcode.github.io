@@ -162,7 +162,7 @@ where:
 
 Since $$n$$ is a power of two there are $$log(n)$$ steps in the reduction. If the multiplications in each step are of $$O(n)$$ then we have an $$O(nlogn)$$ algorithm for FFT.
 
-Both terms are size-$$(N/2)$$ DFTs (with root $$\omega^2$$. Call them $$E[k]$$ and $$O[k]$$.
+Both terms are size- $$(N/2)$$ DFTs (with root $$\omega^2$$ . Call them $$E[k]$$ and $$O[k]$$. 
 
 - For $$(0 \leq k < N/2)$$:  
   $$
