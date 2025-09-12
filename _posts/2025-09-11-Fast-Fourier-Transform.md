@@ -104,6 +104,7 @@ $$
 where $$\omega = e^{-2 \pi i / N}$$ is the primitive $$N$$-th root of unity with $$i^2 = -1$$.  
 
 Note that  
+
 $$
 \omega^x = \omega^{x \bmod N}.
 $$
