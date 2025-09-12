@@ -143,6 +143,23 @@ X[k] \=\ \sum_{m=0}^{\tfrac{N}{2}-1} x[2m]  \omega^{2mk}
 $$  
 
 Notice that both sums are themselves **DFTs of length \(N/2\)** (with base root $$\(\omega^2\))$$.
+The DFT matrix can be decomposed as  
+
+$$
+W_N =
+\begin{bmatrix}
+W_{N/2} & D_{N/2} W_{N/2} \\
+W_{N/2} & -D_{N/2} W_{N/2}
+\end{bmatrix}
+$$
+
+where:
+
+- \( W_{N/2} \) is the DFT matrix of size \(N/2\),  
+- \( D_{N/2} \) is a diagonal matrix of *twiddle factors*:  
+  \[
+  D_{N/2} = \mathrm{diag}(1, \omega, \omega^2, \ldots, \omega^{N/2 - 1}).
+  \]
 
 
 ## n. References
