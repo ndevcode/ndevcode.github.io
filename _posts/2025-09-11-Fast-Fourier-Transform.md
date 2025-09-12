@@ -12,7 +12,7 @@ The Fourier transform, a pivotal operation in signal processing and linear syste
 ## 2. The Discrete Fourier Transform (DFT)  
 The DFT transforms a finite, discrete sequence of data points into a corresponding finite, discrete sequence of frequency components. This output sequence represents samples of the continuous Discrete-Time Fourier Transform (DTFT) of the original signal.
 
-The DFT maps a sequence of complex numbers $$x[n]$$ of length $$N$$ into another sequence $$X[k]$$
+The DFT maps a sequence of complex numbers $$ x[n] $$ of length $$ N $$ into another sequence $$ X[k] $$ 
 
 
 $$
