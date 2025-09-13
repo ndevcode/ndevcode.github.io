@@ -236,8 +236,75 @@ Index & Binary & Bit reversed & New Index \\
 $$
 
 ## 7. The C++ implementation of iterative C++
+The inplace FFT algorithm is given below
+
+```
+void fastFourierTransform(float *X_n, int N) {
+
+    bitReverse(X_n,N);
+
+    constexpr float PI = 3.14159265358979323846f;
+
+    for (int m = 2; m <= N; m *= 2) {
+
+        float theta = -2 * PI / m;
+        float w_m_real = std::cos(theta);
+        float w_m_imag = std::sin(theta);
+
+        for (int k = 0; k < N; k += m) {
+
+            float w_real = 1.0f, w_imag = 0.0f;
+
+            for (int j = 0; j < m/2; j++) {
+
+                int left_idx  = 2 * (k + j);
+                int right_idx = 2 * (k + j + m/2);
+
+                float u_real = X_n[left_idx];
+                float u_imag = X_n[left_idx + 1];
+
+                float v_real = X_n[right_idx] * w_real - X_n[right_idx + 1] * w_imag;
+                float v_imag = X_n[right_idx] * w_imag + X_n[right_idx + 1] * w_real;
+
+                X_n[left_idx]       = u_real + v_real;
+                X_n[left_idx + 1]   = u_imag + v_imag;
+                X_n[right_idx]      = u_real - v_real;
+                X_n[right_idx + 1]  = u_imag - v_imag;
+
+                float tmp_real = w_real * w_m_real  - w_imag * w_m_imag;
+                w_imag = w_real * w_m_imag + w_imag * w_m_real;
+                w_real = tmp_real;
+            }
+        }
+    }
+}
+
+```
 
 ## 8. The inverse FFT
+
+The inverse FFT, IFFT, helps in retrieving the original time/space domain function from the frequency domain function
+
+So $$ IFFT(FFT(x)) = x $$
+
+The code for finding the IFFT given the FFT is given below
+```
+void inverseFFT(float *X_k, int N) {
+    for (int i = 0; i < 2*N; i += 2) {
+        X_k[i+1] = -X_k[i+1]; //conjugate
+    }
+
+    fastFourierTransform(X_k,N);
+
+    for (int i = 0; i < 2*N; i += 2) {
+        X_k[i+1] = -X_k[i+1]; //conjugate
+    }
+
+    for (int i = 0; i < 2*N; i++) {
+        X_k[i] /= N;
+    }
+}
+```
 
 ## 9. References
 
