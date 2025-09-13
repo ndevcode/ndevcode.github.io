@@ -285,7 +285,7 @@ void fastFourierTransform(float *X_n, int N) {
 
 The inverse FFT, IFFT, helps in retrieving the original time/space domain function from the frequency domain function
 
-So $$ IFFT(FFT(x)) = x $$
+So $$IFFT(FFT(x)) = x$$
 
 The code for finding the IFFT given the FFT is given below
 ```
