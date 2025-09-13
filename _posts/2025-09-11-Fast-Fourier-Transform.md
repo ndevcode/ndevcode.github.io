@@ -221,6 +221,20 @@ The $$bit-reverse$$ algorithm reorders input indices by reversing their binary r
 
 So for N = 8 the situation is as below
 
+$$
+\begin{bmatrix}
+Index & Binary & Bit reversed & New Index \\
+0 & 000 & 000 & 0 \\
+1 & 001 & 100 & 4 \\
+2 & 010 & 010 & 2 \\
+3 & 011 & 110 & 6 \\
+4 & 100 & 001 & 1 \\
+5 & 101 & 101 & 5 \\
+6 & 110 & 011 & 3 \\
+7 & 111 & 111 & 7 \\
+\end{bmatrix}
+$$
+
 | Index | Binary | Bit-reversed | New index |
 | ------| ------ | ------------ | --------- |
 | 0     | 000    | 000          | 0         |
