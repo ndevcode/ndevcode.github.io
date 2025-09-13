@@ -68,9 +68,10 @@ void discreteFourierTransform(const float *X_n, float *X_k, int N) {
             real += a * cos_t - b * sin_t;
             imag += a * sin_t + b * cos_t;
 
-            float tmp = cos_t * cos_step - sin_t * sin_step;
-            sin_t     = cos_t * sin_step + sin_t * cos_step;
-            cos_t     = tmp;
+            float tmp_cos_t = cos_t * cos_step - sin_t * sin_step;
+            float tmp_sin_t = cos_t * sin_step + sin_t * cos_step;
+            cos_t           = tmp_cos_t;
+            sin_t           = tmp_sin_t;
         }
 
         X_k[2*k]   = real;
