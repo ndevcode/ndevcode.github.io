@@ -197,6 +197,13 @@ def fft_recursive(x,n,s) :
           X_k+N/2 = p - q
     return X_1,...,X_n   
 ```
+Let us observe the order in which the indices are accessed by the recursive algorithm. Let's say we have an array of size $$8$$ with indices
+$$0,1,...,7$$
+First the indices are split into
+$$0,2,4,6$$ and $$1,3,5,7$$
+and then further into
+$$0,4$$ , $$2,6$$, $$1,5$$, $$3,7$$
+
 ## 6. The Cooley-Tukey Iterative FFT Algorithm
 
 The Cooley-Tukey Iterative FFT is one of the most common FFT algorithms, the pseudocode for which is given below.
@@ -234,6 +241,8 @@ Index & Binary & Bit reversed & New Index \\
 7 & 111 & 111 & 7 \\
 \end{bmatrix}
 $$
+
+Observe the order of indices that is computed by the bit reverse algorithm is the exact same order in which the recursive algorithm would have accessed the indices. So the bit reverse algorithm places the instances in the correct order for the iterative algorithm.
 
 ## 7. The C++ implementation of iterative C++
 The inplace FFT algorithm is given below
