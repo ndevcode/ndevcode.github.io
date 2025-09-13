@@ -202,7 +202,6 @@ The Cooley-Tukey Iterative FFT is one of the most common FFT algorithms, the pse
 ```
 def fft_iterative(x,n) :
     bit_reverse(x,X)
-    n = len(x)
     m = 2
     for s in range(1,log(n)) :
         w_m = omega
