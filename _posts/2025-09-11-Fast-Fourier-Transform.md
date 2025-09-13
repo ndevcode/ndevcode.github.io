@@ -198,13 +198,13 @@ def fft_recursive(x,n,s) :
 ```
 ## 6. The Cooley-Tukey Iterative FFT Algorithm
 
-The Cooley-Tukey Iterative FFT is one of the most common FFT algorithms.
+The Cooley-Tukey Iterative FFT is one of the most common FFT algorithms, the pseudocode for which is given below.
 ```
 def fft_iterative(x,n) :
     bit_reverse(x,X)
     n = len(x)
+    m = 2
     for s in range(1,log(n)) :
-        m = 2
         w_m = omega
         for k in range(0,n-1,m) :
             w = 1
