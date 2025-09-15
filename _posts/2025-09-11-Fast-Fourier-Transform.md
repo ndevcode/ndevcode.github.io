@@ -184,9 +184,9 @@ Each sum is itself a smaller DFT of length $$N/2$$. By computing these smaller D
 ## 5. The recursive algorithm for FFT
 The recursive divide and conquer algorithm is then easier to understand from the above formulation and its pseudocode is given as 
 ```
-def fft_recursive(x,n,s) :
+def fft_recursive(X,n,s) :
     if n == 1 :
-        X_0 = X_0
+        return X_0
     else :
         X_0,...,X_n/2-1 = fft_recursive(x,n/2,s)
         X_n/2,...,X_n   = fft_recursive(x+s,n/2,s)
