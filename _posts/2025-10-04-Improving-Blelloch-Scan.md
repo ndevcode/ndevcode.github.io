@@ -86,11 +86,13 @@ Given:
 
 GEPS is calculated as:
 
+$$
 \[
 \text{GEPS} = \frac{N}{T \times 10^9}
 \]
+$$
 
-For example, processing \(16,777,223\) elements in \(5.6\) ms results in roughly \(3\) GEPS.
+For example, processing $$(16,777,223)$$ elements in $$(5.6) ms $$ results in roughly $$(3)$$ GEPS.
 
 ## Analysis of NSight Compute Kernel Profiling Data
 
