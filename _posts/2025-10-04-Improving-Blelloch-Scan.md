@@ -81,18 +81,16 @@ GEPS is chosen because it directly measures data throughput, which is intuitive 
 
 Given:
 
-- Number of elements processed: \(N\)
-- Kernel runtime in seconds: \(T\)
+- Number of elements processed: $$N$$
+- Kernel runtime in seconds: $$T$$
 
 GEPS is calculated as:
 
 $$
-\[
 \text{GEPS} = \frac{N}{T \times 10^9}
-\]
 $$
 
-For example, processing $$(16,777,223)$$ elements in $$(5.6) ms $$ results in roughly $$(3)$$ GEPS.
+For example, processing $$16,777,223$$ elements in $$5.6$$ ms results in roughly $$3$$ GEPS.
 
 ## Analysis of NSight Compute Kernel Profiling Data
 
@@ -103,12 +101,3 @@ For example, processing $$(16,777,223)$$ elements in $$(5.6) ms $$ results in ro
 
 - **Latency Bound:** The shared memory kernel heavily uses shared memory and synchronizations causing latency stalls.
 - **Memory Bound:** The prefix propagation kernel is constrained primarily by global memory bandwidth.
-
-## What Can Be Done to Improve GEPS for Kernels
-
-### Idea 1: Reduce Shared Memory Bank Conflicts
-
-By padding shared memory array accesses to prevent banks conflicts, we reduce serialization and increase shared memory efficiency.
-
-#### Code Snippet
-

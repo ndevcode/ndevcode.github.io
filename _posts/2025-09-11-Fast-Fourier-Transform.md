@@ -81,7 +81,7 @@ void discreteFourierTransform(const float *X_n, float *X_k, int N) {
 ```
 
 ## 3. The DFT Matrix
-The DFT process can be expressed as a matrix operation where the original vector $$X_n$$ is transformed into the vector $$X_k$$ via multiplication with the square DFT Matrix, $$W$$ where $$W$$ is ad defined below 
+The DFT process can be expressed as a matrix operation where the original vector $$X_n$$ is transformed into the vector $$X_k$$ via multiplication with the square DFT Matrix, $$W$$ where $$W$$ is as defined below 
 
 
 $$
@@ -143,7 +143,7 @@ X[k] =\ \sum_{m=0}^{\tfrac{N}{2}-1} x[2m]  \omega^{2mk}
 +\ \omega^k \sum_{m=0}^{\tfrac{N}{2}-1} x[2m+1]  \omega^{2mk}.
 $$  
 
-Notice that both sums are themselves **DFTs of length \(N/2\)** (with base root $$(\omega^2)$$.
+Notice that both sums are themselves **DFTs of length $$N/2$$** (with base root $$\omega^2$$).
 
 The DFT matrix can be decomposed, recursively,  as  
 
@@ -163,7 +163,7 @@ where:
 
 Since $$n$$ is a power of two there are $$log(n)$$ steps in the reduction. If the multiplications in each step are of $$O(n)$$ then we have an $$O(nlogn)$$ algorithm for FFT.
 
-Both terms are size- $$(N/2)$$ DFTs (with root $$\omega^2$$ . Call them $$E[k]$$ and $$O[k]$$. 
+Both terms are size-$$N/2$$ DFTs (with root $$\omega^2$$). Call them $$E[k]$$ and $$O[k]$$. 
 
 - For $$(0 \leq k < N/2)$$:  
   $$X[k] = E[k] + \omega^k O[k]$$
@@ -171,7 +171,7 @@ Both terms are size- $$(N/2)$$ DFTs (with root $$\omega^2$$ . Call them $$E[k]$$
 - For $$(N/2 \leq k < N)$$:  
   $$X[k] = E[k - N/2] - \omega^{k - N/2} O[k - N/2]$$
 
-  Thus except for the multiplcative part the odd and even terms in the second equation above are already computed. 
+  Thus except for the multiplicative part the odd and even terms in the second equation above are already computed. 
 
 This is the **butterfly relation**.
 
@@ -184,18 +184,18 @@ Each sum is itself a smaller DFT of length $$N/2$$. By computing these smaller D
 ## 5. The recursive algorithm for FFT
 The recursive divide and conquer algorithm is then easier to understand from the above formulation and its pseudocode is given as 
 ```
-def fft_recursive(X,n,s) :
+def fft_recursive(x,n,s) :
     if n == 1 :
-        return X_0
+        return x_0
     else :
-        X_0,...,X_n/2-1 = fft_recursive(x,n/2,s)
-        X_n/2,...,X_n   = fft_recursive(x+s,n/2,s)
-        for k in range(0,n/2-1) :
-                p = X_k
-                q = omega * X_k+N/2
-              X_k = p + q
-          X_k+N/2 = p - q
-    return X_1,...,X_n   
+        X_0,...,X_n/2-1 = fft_recursive(x,n/2,2*s)
+        X_n/2,...,X_n-1 = fft_recursive(x+s,n/2,2*s)
+        for k in range(0,n/2) :
+            p = X_k
+            q = exp(-2*pi*i*k/n) * X_k+n/2
+            X_k = p + q
+            X_k+n/2 = p - q
+        return X_0,...,X_n-1
 ```
 Let us observe the order in which the indices are accessed by the recursive algorithm. Let's say we have an array of size $$8$$ with indices
 $$0,1,...,7$$
@@ -211,12 +211,12 @@ The Cooley-Tukey Iterative FFT is one of the most common FFT algorithms, the pse
 def fft_iterative(x,n) :
     bit_reverse(x,X)
     m = 2
-    for s in range(1,log(n)) :
-        w_m = omega
+    for s in range(1,log(n)+1) :
+        w_m = exp(-2*pi*i/m)
         for k in range(0,n-1,m) :
             w = 1
             for j in range(0,m/2) :
-                t = wX[k + j + m/2]
+                t = w * X[k + j + m/2]
                 u =  X[k + j]
                 X[k + j] = u + t
                 X[k + j + m/2] = u - t
@@ -244,7 +244,7 @@ $$
 
 Observe the order of indices that is computed by the bit reverse algorithm is the exact same order in which the recursive algorithm would have accessed the indices. So the bit reverse algorithm places the instances in the correct order for the iterative algorithm.
 
-## 7. The C++ implementation of iterative C++
+## 7. The C++ implementation of iterative FFT
 The inplace FFT algorithm is given below
 
 ```
