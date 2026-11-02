@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">CUDA kernel runtime for different block sizes</title>
+  <desc id="desc">Runtime stays close to 4.8 milliseconds through a 32 by 24 block, jumps to 7.4 milliseconds at 32 by 25, then falls to 6 milliseconds at 32 by 32.</desc>
+  <rect width="960" height="520" fill="#ffffff"/>
+  <text x="480" y="34" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="600" fill="#172033">Kernel runtime for different block sizes</text>
+  <text x="480" y="57" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#667085">RTX 4060 Laptop GPU · lower is better</text>
+
+  <rect x="75" y="76" width="825" height="344" fill="#f8fafc" stroke="#d0d5dd"/>
+  <rect x="455" y="76" width="60" height="344" fill="#fff1e8"/>
+
+  <g stroke="#dfe3e8" stroke-width="1">
+    <line x1="75" y1="410" x2="900" y2="410"/>
+    <line x1="75" y1="330" x2="900" y2="330"/>
+    <line x1="75" y1="250" x2="900" y2="250"/>
+    <line x1="75" y1="170" x2="900" y2="170"/>
+    <line x1="75" y1="90" x2="900" y2="90"/>
+  </g>
+
+  <g font-family="sans-serif" font-size="13" fill="#475467" text-anchor="end">
+    <text x="64" y="415">4</text>
+    <text x="64" y="335">5</text>
+    <text x="64" y="255">6</text>
+    <text x="64" y="175">7</text>
+    <text x="64" y="95">8</text>
+  </g>
+  <text x="21" y="250" transform="rotate(-90 21 250)" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#344054">Runtime (ms)</text>
+
+  <line x1="484" y1="76" x2="484" y2="420" stroke="#e24a33" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="494" y="103" font-family="sans-serif" font-size="13" font-weight="600" fill="#b93826">second block no longer fits</text>
+
+  <polyline points="110,346 215,362 320,346 425,338 530,138 635,186 740,218 845,250"
+            fill="none" stroke="#2563eb" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <g fill="#ffffff" stroke="#2563eb" stroke-width="3">
+    <circle cx="110" cy="346" r="6"/>
+    <circle cx="215" cy="362" r="6"/>
+    <circle cx="320" cy="346" r="6"/>
+    <circle cx="425" cy="338" r="6"/>
+    <circle cx="530" cy="138" r="6" stroke="#e24a33"/>
+    <circle cx="635" cy="186" r="6"/>
+    <circle cx="740" cy="218" r="6"/>
+    <circle cx="845" cy="250" r="6"/>
+  </g>
+
+  <g font-family="sans-serif" font-size="12" font-weight="600" fill="#344054" text-anchor="middle">
+    <text x="110" y="332">4.8</text>
+    <text x="215" y="386">4.6</text>
+    <text x="320" y="332">4.8</text>
+    <text x="425" y="324">4.9</text>
+    <text x="530" y="124" fill="#b93826">7.4</text>
+    <text x="635" y="172">6.8</text>
+    <text x="740" y="204">6.4</text>
+    <text x="845" y="236">6.0</text>
+  </g>
+
+  <g font-family="sans-serif" font-size="13" fill="#344054" text-anchor="middle">
+    <text x="110" y="446">8×8</text>
+    <text x="215" y="446">16×16</text>
+    <text x="320" y="446">32×16</text>
+    <text x="425" y="446">32×24</text>
+    <text x="530" y="446">32×25</text>
+    <text x="635" y="446">32×26</text>
+    <text x="740" y="446">32×28</text>
+    <text x="845" y="446">32×32</text>
+  </g>
+  <text x="480" y="482" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#344054">Block dimensions</text>
+</svg>

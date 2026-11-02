@@ -54,6 +54,16 @@ events.
 | 32×28 | 896 | 28 | 1 | 58% | 6.4 ms |
 | 32×32 | 1024 | 32 | 1 | 66% | 6.0 ms |
 
+<figure>
+  <img src="{{ '/assets/images/cuda-block-size-runtime.svg' | relative_url }}"
+       alt="Line graph of CUDA kernel runtime for each tested block size"
+       style="width: 100%; height: auto;">
+  <figcaption>
+    Figure 1: The runtime increases suddenly between the 32×24 and 32×25
+    block sizes, and then reduces as more warps are added to the block.
+  </figcaption>
+</figure>
+
 From $$8 \times 8$$ to $$32 \times 24$$ the execution time remains almost the
 same. So a smaller block by itself does not make the kernel faster.
 
@@ -103,6 +113,16 @@ The situation is as below.
 25 warps per block : 1 block fits -> 25 warps running
 32 warps per block : 1 block fits -> 32 warps running
 ```
+
+<figure>
+  <img src="{{ '/assets/images/cuda-block-size-occupancy.svg' | relative_url }}"
+       alt="Bar graph of occupancy and active warps for each tested block size"
+       style="width: 100%; height: auto;">
+  <figcaption>
+    Figure 2: The extra warp in the 32×25 block prevents a second block from
+    fitting on the SM. The active warp count drops from 48 to 25.
+  </figcaption>
+</figure>
 
 For a block containing 24 warps, two complete blocks can reside on the SM and
 all 48 warp slots are used. Adding one more warp to the block means that two

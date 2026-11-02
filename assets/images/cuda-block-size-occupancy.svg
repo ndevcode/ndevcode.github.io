@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">CUDA occupancy and active warps for different block sizes</title>
+  <desc id="desc">Occupancy is 99 percent through a 32 by 24 block. It drops to 52 percent at 32 by 25 and then rises to 66 percent at 32 by 32.</desc>
+  <rect width="960" height="540" fill="#ffffff"/>
+  <text x="480" y="34" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="600" fill="#172033">Occupancy and active warps</text>
+  <text x="480" y="57" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#667085">Labels above the bars show active warps per SM</text>
+
+  <rect x="75" y="76" width="825" height="344" fill="#f8fafc" stroke="#d0d5dd"/>
+  <rect x="455" y="76" width="60" height="344" fill="#fff1e8"/>
+
+  <g stroke="#dfe3e8" stroke-width="1">
+    <line x1="75" y1="410" x2="900" y2="410"/>
+    <line x1="75" y1="330" x2="900" y2="330"/>
+    <line x1="75" y1="250" x2="900" y2="250"/>
+    <line x1="75" y1="170" x2="900" y2="170"/>
+    <line x1="75" y1="90" x2="900" y2="90"/>
+  </g>
+
+  <g font-family="sans-serif" font-size="13" fill="#475467" text-anchor="end">
+    <text x="64" y="415">0</text>
+    <text x="64" y="335">25</text>
+    <text x="64" y="255">50</text>
+    <text x="64" y="175">75</text>
+    <text x="64" y="95">100</text>
+  </g>
+  <text x="21" y="250" transform="rotate(-90 21 250)" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#344054">Occupancy (%)</text>
+
+  <line x1="484" y1="76" x2="484" y2="420" stroke="#e24a33" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="494" y="111" font-family="sans-serif" font-size="13" font-weight="600" fill="#b93826">48 → 25 active warps</text>
+
+  <g fill="#4f7dd4">
+    <rect x="78" y="93" width="64" height="317" rx="3"/>
+    <rect x="183" y="93" width="64" height="317" rx="3"/>
+    <rect x="288" y="93" width="64" height="317" rx="3"/>
+    <rect x="393" y="93" width="64" height="317" rx="3"/>
+    <rect x="498" y="244" width="64" height="166" rx="3" fill="#e24a33"/>
+    <rect x="603" y="237" width="64" height="173" rx="3"/>
+    <rect x="708" y="224" width="64" height="186" rx="3"/>
+    <rect x="813" y="199" width="64" height="211" rx="3"/>
+  </g>
+
+  <g font-family="sans-serif" font-size="13" font-weight="600" fill="#344054" text-anchor="middle">
+    <text x="110" y="84">48</text>
+    <text x="215" y="84">48</text>
+    <text x="320" y="84">48</text>
+    <text x="425" y="84">48</text>
+    <text x="530" y="235" fill="#b93826">25</text>
+    <text x="635" y="228">26</text>
+    <text x="740" y="215">28</text>
+    <text x="845" y="190">32</text>
+  </g>
+
+  <g font-family="sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">
+    <text x="110" y="113">99%</text>
+    <text x="215" y="113">99%</text>
+    <text x="320" y="113">99%</text>
+    <text x="425" y="113">99%</text>
+    <text x="530" y="265">52%</text>
+    <text x="635" y="258">54%</text>
+    <text x="740" y="245">58%</text>
+    <text x="845" y="220">66%</text>
+  </g>
+
+  <g font-family="sans-serif" font-size="13" fill="#344054" text-anchor="middle">
+    <text x="110" y="446">8×8</text>
+    <text x="215" y="446">16×16</text>
+    <text x="320" y="446">32×16</text>
+    <text x="425" y="446">32×24</text>
+    <text x="530" y="446">32×25</text>
+    <text x="635" y="446">32×26</text>
+    <text x="740" y="446">32×28</text>
+    <text x="845" y="446">32×32</text>
+  </g>
+  <text x="480" y="482" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#344054">Block dimensions</text>
+  <g font-family="sans-serif" font-size="12" fill="#667085">
+    <rect x="342" y="506" width="16" height="12" rx="2" fill="#4f7dd4"/>
+    <text x="366" y="517">normal</text>
+    <rect x="455" y="506" width="16" height="12" rx="2" fill="#e24a33"/>
+    <text x="479" y="517">occupancy cliff</text>
+  </g>
+</svg>
