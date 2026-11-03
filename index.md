@@ -7,11 +7,6 @@ I build chip design tools (20+ years in design-for-test and physical design), sh
 
 [GitHub](https://github.com/ndevcode) · [LeetGPU](https://leetgpu.com/ndevcode)
 
-## PART 0 : Start here
-
-- [Why a Bigger CUDA Block Can Be Slower, Then Faster Again](/2026/04/01/CUDA-Block-Size-And-Occupancy.html)  
-  Going from 768 to 800 threads per block made a kernel about 1.5× slower.
-
 ## PART 1 : Algorithms on real hardware
 
 - [Why a Bigger CUDA Block Can Be Slower, Then Faster Again](/2026/04/01/CUDA-Block-Size-And-Occupancy.html)  
