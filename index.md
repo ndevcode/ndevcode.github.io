@@ -7,14 +7,12 @@ I build chip design tools (20+ years in design-for-test and physical design), sh
 
 [GitHub](https://github.com/ndevcode) · [LeetGPU](https://leetgpu.com/ndevcode)
 
-## PART 1 : Algorithms on real hardware
+## PART 1 : High Performance Computing
 
 - [Why a Bigger CUDA Block Can Be Slower, Then Faster Again](/2026/04/01/CUDA-Block-Size-And-Occupancy.html)  
   An occupancy cliff at 25 warps per block, explained with Nsight Compute.
 - [Improving Performance of Blelloch Scan Multi-Block Operation on GPU](/2025/10/04/Improving-Blelloch-Scan.html)  
   Profiling two kernels: one latency bound, the other memory bound.
-- [Fast Fourier Transform (FFT): A Gentle Introduction](/2025/09/11/Fast-Fourier-Transform.html)  
-  From the DFT matrix to an in-place C++ implementation.
 
 ## PART 2 : C++ and Python
 
@@ -24,3 +22,8 @@ I build chip design tools (20+ years in design-for-test and physical design), sh
   Six ways, ending with C++20 concepts.
 - [Understanding Generator Expressions vs List Comprehensions in Python](/2025/04/23/understanding-generators.html)  
   A cleaner way to build a vocabulary, and what lazy evaluation gives you.
+
+## PART 3 : Algorithms
+
+- [Fast Fourier Transform (FFT): A Gentle Introduction](/2025/09/11/Fast-Fourier-Transform.html)  
+  From the DFT matrix to an in-place C++ implementation.
